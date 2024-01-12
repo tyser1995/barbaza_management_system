@@ -103,40 +103,13 @@
     })
     </script>
 
-    <script src="{{ asset('/sw.js') }}"></script>
+    <script src="{{ asset('sw.js') }}"></script>
     <script>
     if (!navigator.serviceWorker.controller) {
         navigator.serviceWorker.register("/sw.js").then(function(reg) {
             console.log("Service worker has been registered for scope: " + reg.scope);
         });
     }
-    </script>
-    <script type="module">
-    // Import the functions you need from the SDKs you need
-    import {
-        initializeApp
-    } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-    import {
-        getAnalytics
-    } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-        apiKey: "AIzaSyCeXgaTQllBIN2tcHyTCdvOq4LmDnwW6IM",
-        authDomain: "emergency-responder-76586.firebaseapp.com",
-        projectId: "emergency-responder-76586",
-        storageBucket: "emergency-responder-76586.appspot.com",
-        messagingSenderId: "812446223907",
-        appId: "1:812446223907:web:b6fc909e3e7a4aafca2b96",
-        measurementId: "G-N03LVL6GKL"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
     </script>
 
     @stack('scripts')
