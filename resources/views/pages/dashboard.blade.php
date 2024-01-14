@@ -160,6 +160,45 @@ body {
    <?php
         $user_role = \App\Models\User::findOrFail(Auth::user()->id);
    ?>
+
+    <h3>Announcements</h3>
+    <div class="row">
+        @foreach ($announcement as $announcements)
+        <div class="col-md-3">
+            <div class="card card-outline card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <span class="info-box-icon"><i class="nav-icon fas fa-users"></i> Who: </span>
+                        {{$announcements->who}}</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.card-tools -->
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <p>
+                        <span class="info-box-icon"><i class="nav-icon fas fa-bullhorn"></i> What: </span>
+                        {{$announcements->what}}
+                    </p>
+                    <p>
+                        <span class="info-box-icon"><i class="far fa-map"></i> Where: </span>
+                        {{$announcements->where}}
+                    </p>
+                    <p>
+                        <span class="info-box-icon"><i class="far fa-calendar-alt"></i> When: </span>
+                        {{$announcements->when}}
+                    </p>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        @endforeach
+    </div>
+
     <!-- Map card -->
     <div class="card bg-gradient-primary">
         <div class="card-header border-0">
