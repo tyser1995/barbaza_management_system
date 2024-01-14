@@ -25,14 +25,20 @@ class PermissionTableSeeder extends Seeder
             'dashboard-list',  
             'user-list',
             'user-create',
-            'user-store',
             'user-edit',
             'user-delete',
             'role-list',
             'role-create',
-            'role-store',
             'role-edit',
             'role-delete',
+            'announcement-list',
+            'announcement-create',
+            'announcement-edit',
+            'announcement-delete',
+            'price_monitoring-list',
+            'price_monitoring-create',
+            'price_monitoring-edit',
+            'price_monitoring-delete'
         ];
 
         //DB::table('permissions')->truncate();

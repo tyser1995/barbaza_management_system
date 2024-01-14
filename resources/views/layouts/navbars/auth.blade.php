@@ -53,6 +53,15 @@
                             </a>
                         </li>
                     @endif
+                    <li class="nav-item">
+                        <a href="{{ route('announcements') }}"
+                            class="nav-link {{ $elementActive == 'announcement' ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-bullhorn"></i>
+                            <p>
+                                Announcement
+                            </p>
+                        </a>
+                    </li>
                   
                     @if (Auth::user()->can('user-list') || Auth::user()->can('role-list'))
                         <li class="nav-item {{ $elementActive == 'user' || $elementActive == 'roles' ? 'menu-open' : '' }}">
@@ -87,23 +96,36 @@
                         </li>
                     @endif
 
-                  <li class="nav-item d-none">
-                      <a href="#" class="nav-link">
-                          <i class="nav-icon fas fa-briefcase-medical"></i>
-                          <p>
-                              Medical Service
-                              <i class="right fas fa-angle-left"></i>
-                          </p>
-                      </a>
-                      <ul class="nav nav-treeview">
-                          <li class="nav-item">
-                              <a href="#" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Services</p>
-                              </a>
-                          </li>
-                      </ul>
-                  </li>
+                    <li class="nav-item {{ $elementActive == 'user' || $elementActive == 'roles' ? 'menu-open' : '' }}">
+                        <a href="#"
+                            class="nav-link {{ $elementActive == 'user' || $elementActive == 'roles' ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-store"></i>
+                            <p>
+                                Business Management
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            @can('user-list')
+                            <li class="nav-item">
+                                <a href="{{ route('users') }}"
+                                    class="nav-link {{ $elementActive == 'user' ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Owner</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('role-list')
+                            <li class="nav-item">
+                                <a href="{{ route('roles') }}"
+                                    class="nav-link {{ $elementActive == 'roles' ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Store</p>
+                                </a>
+                            </li>
+                            @endcan
+                        </ul>
+                    </li>
                   <li class="nav-item d-none">
                       <a href="#" class="nav-link">
                           <i class="nav-icon fas fa-people-carry"></i>
