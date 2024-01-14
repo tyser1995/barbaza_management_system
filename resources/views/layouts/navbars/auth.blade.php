@@ -4,7 +4,7 @@
       <a href="#" class="brand-link">
           <img src="{{ asset('images')}}/logo/no_logo.jpg " alt="No logo"
               class="brand-image img-circle elevation-3" style="opacity: .8">
-          <span class="brand-text font-weight-light">Barabaza</span>
+          <span class="brand-text font-weight-light">{{env('APP_TITLE','TITLE')}}</span>
       </a>
 
       <!-- Sidebar -->

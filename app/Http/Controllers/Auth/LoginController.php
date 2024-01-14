@@ -65,7 +65,7 @@ class LoginController extends Controller
             $tokenSecret = $user->tokenSecret;
             //return $user->token;
         } catch (\Exception $e) {
-            //return redirect('/login')->withError(__('No account is linked to this email'));
+            return redirect('/login')->withError(__('No account is linked to this email'));
         }
       
         // if(explode("@", $user->email)[1] !== 'cpu.com'){
@@ -79,15 +79,15 @@ class LoginController extends Controller
             Auth::login($existingUser);
         } 
         else{
-            //return redirect('/login')->withError(__('No account is linked to this email'));
+            return redirect('/login')->withError(__('No account is linked to this email'));
             //account created
-            User::create([
-                'name' => $user->name,
-                'email' => $user->email,
-                'password' => Hash::make(explode(' ',$user->name)[0]),
-                'role' => 10,
-            ]);
-            Auth::login($user->email);
+            // User::create([
+            //     'name' => $user->name,
+            //     'email' => $user->email,
+            //     'password' => Hash::make(explode(' ',$user->name)[0]),
+            //     'role' => 10,
+            // ]);
+            // Auth::login($user->email);
         }
         return redirect(RouteServiceProvider::HOME);
     }
