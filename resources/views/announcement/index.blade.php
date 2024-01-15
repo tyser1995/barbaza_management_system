@@ -41,7 +41,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive-sm">
-                        <table id="tblUser" class="table">
+                        <table id="tblData" class="table">
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">{{ __('Who') }}</th>
@@ -80,11 +80,7 @@
 @push('scripts')
 <script>
 $(document).ready(function() {
-    // $('#tblUser').DataTable({
-    //     order: [
-    //         [0, 'asc']
-    //     ]
-    // });
+    $('#tblData').DataTable();
 
 
     // $('#tblUser tbody').on('click','.btnCanDestroy',function() {

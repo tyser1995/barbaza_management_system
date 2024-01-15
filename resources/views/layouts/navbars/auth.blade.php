@@ -62,6 +62,15 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('price_monitorings') }}"
+                            class="nav-link {{ $elementActive == 'price_monitoring' ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-money-bill-alt"></i>
+                            <p>
+                                Price Monitoring
+                            </p>
+                        </a>
+                    </li>
                   
                     @if (Auth::user()->can('user-list') || Auth::user()->can('role-list'))
                         <li class="nav-item {{ $elementActive == 'user' || $elementActive == 'roles' ? 'menu-open' : '' }}">
@@ -96,7 +105,7 @@
                         </li>
                     @endif
 
-                    <li class="nav-item {{ $elementActive == 'user' || $elementActive == 'roles' ? 'menu-open' : '' }}">
+                    <li class="d-none nav-item {{ $elementActive == 'user' || $elementActive == 'roles' ? 'menu-open' : '' }}">
                         <a href="#"
                             class="nav-link {{ $elementActive == 'user' || $elementActive == 'roles' ? 'active' : '' }}">
                             <i class="nav-icon fas fa-store"></i>
@@ -125,6 +134,33 @@
                             </li>
                             @endcan
                         </ul>
+                    </li>
+                    <li class="nav-item d-none">
+                        <a href="{{ route('announcements') }}"
+                            class="nav-link {{ $elementActive == 'assistance' ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-user-tie"></i>
+                            <p>
+                                Assistance
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none">
+                        <a href="{{ route('announcements') }}"
+                            class="nav-link {{ $elementActive == 'consumer_right' ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-user-check"></i>
+                            <p>
+                                Consumer Rights
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none">
+                        <a href="{{ route('announcements') }}"
+                            class="nav-link {{ $elementActive == 'filter_industry' ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-filter"></i>
+                            <p>
+                                Filter Industry
+                            </p>
+                        </a>
                     </li>
                   <li class="nav-item d-none">
                       <a href="#" class="nav-link">

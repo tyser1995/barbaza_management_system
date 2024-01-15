@@ -61,6 +61,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('announcements', ['as' => 'announcements', 'uses' => 'App\Http\Controllers\AnnouncementController@index']);
     Route::resource('announcement', 'App\Http\Controllers\AnnouncementController');
     
+    //Price Monitoring
+    Route::get('price_monitorings', ['as' => 'price_monitorings', 'uses' => 'App\Http\Controllers\PriceMonitoringController@index']);
+    Route::resource('price_monitoring', 'App\Http\Controllers\PriceMonitoringController');
+
     //Nofication
     Route::get("/admin/notify", function () {
         return view('notify', [

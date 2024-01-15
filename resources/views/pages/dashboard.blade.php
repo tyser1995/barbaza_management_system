@@ -161,7 +161,9 @@ body {
         $user_role = \App\Models\User::findOrFail(Auth::user()->id);
    ?>
 
+    @if($announcement->count() > 0)
     <h3>Announcements</h3>
+    @endif
     <div class="row">
         @foreach ($announcement as $announcements)
         <div class="col-md-3">
