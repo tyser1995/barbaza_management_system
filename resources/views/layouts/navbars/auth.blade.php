@@ -53,6 +53,7 @@
                             </a>
                         </li>
                     @endif
+                    @if (Auth::user()->can('announcement-list'))
                     <li class="nav-item">
                         <a href="{{ route('announcements') }}"
                             class="nav-link {{ $elementActive == 'announcement' ? 'active' : '' }}">
@@ -62,6 +63,8 @@
                             </p>
                         </a>
                     </li>
+                    @endif
+                    @if (Auth::user()->can('price_monitoring-list'))
                     <li class="nav-item">
                         <a href="{{ route('price_monitorings') }}"
                             class="nav-link {{ $elementActive == 'price_monitoring' ? 'active' : '' }}">
@@ -71,6 +74,7 @@
                             </p>
                         </a>
                     </li>
+                    @endif
                   
                     @if (Auth::user()->can('user-list') || Auth::user()->can('role-list'))
                         <li class="nav-item {{ $elementActive == 'user' || $elementActive == 'roles' ? 'menu-open' : '' }}">
